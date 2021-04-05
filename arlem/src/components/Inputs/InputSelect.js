@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function InputSelect({label}) {
+export default function InputSelect({label, ...otherProps}) {
   const classes = useStyles();
   const [selectedValue, setSelectedValue] = React.useState('');
 

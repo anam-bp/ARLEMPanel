@@ -1,15 +1,16 @@
 import { Grid, Typography , Button} from '@material-ui/core'
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
+import './Header.css'
 
 const useStyles = makeStyles((theme) => ({
   
-    root: {
+    headerWrapper: {
         padding:'2.5rem',
         backgroundColor : '#009d88',
       },
 
-      title : {
+      headerTitle : {
         display:'block',
         margin: 0,
         color: 'white',
@@ -18,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: '1em',
         
       },
-      subtitle : {
+      headerSubtitle : {
         color: 'white',
         marginTop:0,
         fontSize:'30px',
@@ -34,12 +35,12 @@ const useStyles = makeStyles((theme) => ({
 function Header({title, description, buttonURL, buttonText}) {
     const classes = useStyles();
     return (
-        <Grid container align="left" className={classes.root} alignItems="center">
+        <Grid container align="left" className={classes.headerWrapper} alignItems="center">
             <Grid item xs={12} md={10}>
-                <Typography variant="h1" component="h1" className={classes.title}>
+                <Typography variant="h1" component="h1" className={classes.headerTitle}>
                     {title}
                 </Typography>
-                <Typography variant="subtitle-2" component="p" className={classes.subtitle}>
+                <Typography variant="subtitle-2" component="p" className={classes.headerSubtitle}>
                     {description}
                 </Typography>
             </Grid>

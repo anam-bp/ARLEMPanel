@@ -131,51 +131,7 @@ function WorkplaceCreate() {
                 </List>
             </Box>
         </Box>
-        // <Grid container spacing={5} className={classes.root}>
-        //     <Grid item xs={12} md={2} className={classes.tilesContainer}>
-        //     <Tile icon="fa-home" text="Workplace Details" />
-        //         <Typography variant="h4" component="h4" className={classes.categoryHeading}>Tangibles</Typography>
-        //         <Tile icon="fa-user" text="Add Person" />
-        //         <Tile icon="fa-bicycle" text="Add Thing" />
-        //         <Tile icon="fa-map-marker" text="Add Location" />
-        //         <Typography variant="h4" component="h4" className={classes.categoryHeading}>Configurables</Typography>
-        //         <Tile icon="fa-th" text="Add App" />
-        //         <Tile icon="fa-mobile" text="Add Device" />
-        //         <Typography variant="h4" component="h4" className={classes.categoryHeading}>Triggers</Typography>
-        //         <Tile icon="fa-lightbulb-o" text="Add App" />
-        //         <Tile icon="fa-mobile" text="Add Device" />  
-        //         <Tile icon="fa-lightbulb-o" text="Add Hazard" />
-        //         <Tile icon="fa-mobile" text="Add Detectable" />                
-
-        //     </Grid>
-        //     <Grid item xs={12} md={7} className={classes.middleContainer}>
-        //     <Typography variant="h2" component="h2" color="textSecondary" className={classes.title}>
-        //             Create Workplace
-        //         </Typography>
-        //         <WorkplaceCreateBasic />
-        //     </Grid>
-        //     <Grid item xs={12} md={3} className={classes.rightContainer}>
-        //     <Typography variant="h4" component="h4" color="textSecondary" className={classes.subTitle}>
-        //                Added Entities
-        //         </Typography>
-        //         <TextField 
-        //         type="search"
-        //         fullWidth="true"
-        //         placeholder="Search Entities"
-        //         variant="filled"
-        //         className={classes.searchInput}
-        //         />
-        //         <List className={classes.listStyles}>
-        //             <ListItem>
-        //                 <ListItemText primary="Person" secondary="John Doe" />
-        //                 <IconButton variant="contained" color="primary">
-        //                     <i className="fa fa-trash"></i>
-        //                 </IconButton>
-        //             </ListItem>
-        //         </List>
-        //     </Grid>
-           
-    
+            
     )
 }
 

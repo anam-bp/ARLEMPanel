@@ -17,6 +17,8 @@ import Activity from '../src/entities/activity/Activity'
 import ActivityCreate from './entities/activity/ActivityCreate'
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Navigation from './theme/components/Navigation';
+import SignUp from './entities/auth/SignUpForm';
+import SignIn from './entities/auth/SignInForm'
 
 
 const theme = createMuiTheme({
@@ -49,6 +51,8 @@ function App() {
             <Route path="/activities" component={Activity} />
             <Route path="/createworkplace" component={WorkplaceCreate} />
             <Route path="/createactivity" component={ActivityCreate} />
+            <Route path="/signup" component={SignUp} />
+            <Route path="/signin" component={SignIn} />
 
               
               

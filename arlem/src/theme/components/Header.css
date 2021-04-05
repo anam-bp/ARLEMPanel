@@ -1,0 +1,23 @@
+.root {
+  padding: "2.5rem";
+  background-color: "#009d88";
+}
+
+.title {
+  display: "block";
+  margin: 0;
+  color: "white";
+  font-size: "50px";
+  display: "block";
+  line-height: "1em";
+}
+.subtitle {
+  color: "white";
+  margin-top: 0;
+  font-size: "30px";
+  font-weight: 100;
+  margin-bottom: "30px";
+  white-space: "inherit";
+  margin-top: "1rem";
+  line-height: "40px";
+}

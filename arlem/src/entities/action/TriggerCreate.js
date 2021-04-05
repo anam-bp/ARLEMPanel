@@ -2,6 +2,8 @@ import React from 'react';
 import { Typography, Grid, Button, Box } from '@material-ui/core'
 import InputField from '../../components/Inputs/InputField';
 import InputSelect from '../../components/Inputs/InputSelect'
+import { Formik , Form, Field, ErrorMessage, yupToFormErrors } from 'formik';
+import * as Yup from 'yup'
 
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
@@ -21,34 +23,68 @@ const useStyles = makeStyles((theme) => ({
     }
       
 }));
+const initialValues = {
+    email : '',
+    password : ''
+  }
+  const validationSchema = Yup.object({
+    mode : Yup.string().required("Required"),
+    workplace : Yup.string().required("Required"),
+    description : Yup.string().required("Required"),
+    language : Yup.string().required("Required")
+  })
+
+  const onSubmit = values => {
+    console.log("Form data" , values)
+    
+  }
 
 function TriggerCreate() {
     const classes = useStyles();
     return (
         <div>
-            <form className={classes.formStyles}>
-                <Grid container spacing={3}>
-                    <Grid item xs={12} md={6}>
-                        <InputSelect label="Mode" />
+            <Formik
+             initialValues={initialValues}
+             validationSchema={validationSchema}
+             onSubmit={onSubmit}
+            >
+                {(props) => {
+                    <form  onSubmit={props.handleSubmit} className={classes.formStyles}>
+                    <Grid container spacing={3}>
+                        <Grid item xs={12} md={6}>
+                            <InputSelect label="Mode" />
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <InputSelect label="Workplace" />
+                        </Grid>
+                        
                     </Grid>
-                    <Grid item xs={12} md={6}>
-                        <InputSelect label="Workplace" />
+                    <Grid container spacing={3}>
+                        <Grid item xs={12} md={6}>
+                            <TextField
+                                fullWidth
+                                id="description"
+                                name="description"
+                                label="Description"
+                                value={props.values.description}
+                                onChange={props.handleChange}
+                                error={props.touched.description && Boolean(props.errors.description)}
+                                helperText={props.touched.description && props.errors.description}
+                            />
+                            {/* <InputField label="Description" type="textarea"/> */}
+                        </Grid>
+                        <Grid item xs={12} md={6}>
+                            <InputSelect label="Language" />
+                        </Grid>
                     </Grid>
+                    <Box display="flex" mt={3}>
+                        <Button type="submit" variant="contained" color="primary">Start Adding Actions</Button>
+                    </Box>
                     
-                </Grid>
-                <Grid container spacing={3}>
-                    <Grid item xs={12} md={6}>
-                        <InputField label="Description" type="textarea"/>
-                    </Grid>
-                    <Grid item xs={12} md={6}>
-                        <InputSelect label="Language" />
-                    </Grid>
-                </Grid>
-                <Box display="flex" mt={3}>
-                    <Button type="submit" variant="contained" color="primary">Start Adding Actions</Button>
-                </Box>
-                
-            </form>
+                </form>
+                }}
+            </Formik>
+            
         </div>
     )
 }
